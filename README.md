@@ -61,6 +61,14 @@ A short list of real things I ship:
 
 ---
 
+## 📊 Stats
+<p align="center">
+  <img width="49%" src="assets/stats.svg" />
+  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=ssttechdev&theme=tokyonight" />
+</p>
+
+---
+
 ## 🛠️ Tools I Use Daily
 - Docker / Compose  
 - GitHub Actions  
@@ -68,14 +76,6 @@ A short list of real things I ship:
 - Nginx  
 - Makefiles  
 - Git multi-repo workflow  
-
----
-
-## 📊 Stats
-<p align="center">
-  <img width="46%" src="assets/stats.svg" />
-  <img width="46%" src="https://github-readme-streak-stats.herokuapp.com/?user=ssttechdev&theme=tokyonight" />
-</p>
 
 ---
 
