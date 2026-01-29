@@ -1,5 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="140" viewBox="0 0 800 140">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="268" viewBox="0 0 800 268">
   <rect width="100%" height="100%" rx="12" fill="#0d1117" />
-  <text x="24" y="40" font-size="16" font-weight="600" fill="#c9d1d9">Top Languages (all repos)</text>
-  <text x="24" y="80" font-size="13" fill="#8b949e">Run the "Update Language Stats" workflow to generate this card.</text>
+  <text x="24" y="36" font-size="16" font-weight="600" fill="#c9d1d9">Top Languages (all repos)</text>
+  
+  <text x="24" y="64" font-size="12" fill="#c9d1d9">PHP</text>
+  <text x="758" y="64" font-size="12" fill="#c9d1d9">54.4%</text>
+  <rect x="210" y="52" width="540" height="14" rx="7" fill="#161b22" />
+  <rect x="210" y="52" width="294" height="14" rx="7" fill="#6a737d" />
+  
+  <text x="24" y="88" font-size="12" fill="#c9d1d9">JavaScript</text>
+  <text x="758" y="88" font-size="12" fill="#c9d1d9">26.6%</text>
+  <rect x="210" y="76" width="540" height="14" rx="7" fill="#161b22" />
+  <rect x="210" y="76" width="144" height="14" rx="7" fill="#f1e05a" />
+  
+  <text x="24" y="112" font-size="12" fill="#c9d1d9">CSS</text>
+  <text x="758" y="112" font-size="12" fill="#c9d1d9">6.1%</text>
+  <rect x="210" y="100" width="540" height="14" rx="7" fill="#161b22" />
+  <rect x="210" y="100" width="33" height="14" rx="7" fill="#563d7c" />
+  
+  <text x="24" y="136" font-size="12" fill="#c9d1d9">TypeScript</text>
+  <text x="758" y="136" font-size="12" fill="#c9d1d9">4.6%</text>
+  <rect x="210" y="124" width="540" height="14" rx="7" fill="#161b22" />
+  <rect x="210" y="124" width="25" height="14" rx="7" fill="#3178c6" />
+  
+  <text x="24" y="160" font-size="12" fill="#c9d1d9">HTML</text>
+  <text x="758" y="160" font-size="12" fill="#c9d1d9">3.4%</text>
+  <rect x="210" y="148" width="540" height="14" rx="7" fill="#161b22" />
+  <rect x="210" y="148" width="18" height="14" rx="7" fill="#e34c26" />
+  
+  <text x="24" y="184" font-size="12" fill="#c9d1d9">SCSS</text>
+  <text x="758" y="184" font-size="12" fill="#c9d1d9">1.1%</text>
+  <rect x="210" y="172" width="540" height="14" rx="7" fill="#161b22" />
+  <rect x="210" y="172" width="6" height="14" rx="7" fill="#6a737d" />
+  
+  <text x="24" y="208" font-size="12" fill="#c9d1d9">Blade</text>
+  <text x="758" y="208" font-size="12" fill="#c9d1d9">0.9%</text>
+  <rect x="210" y="196" width="540" height="14" rx="7" fill="#161b22" />
+  <rect x="210" y="196" width="6" height="14" rx="7" fill="#6a737d" />
+  
+  <text x="24" y="232" font-size="12" fill="#c9d1d9">C#</text>
+  <text x="758" y="232" font-size="12" fill="#c9d1d9">0.9%</text>
+  <rect x="210" y="220" width="540" height="14" rx="7" fill="#161b22" />
+  <rect x="210" y="220" width="6" height="14" rx="7" fill="#178600" />
+  
 </svg>
