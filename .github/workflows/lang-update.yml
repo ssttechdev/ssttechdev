@@ -20,19 +20,20 @@ jobs:
         uses: actions/github-script@v7
         id: stats
         with:
-          github-token: ${{ secrets.ACCESS_TOKEN }}
+          github-token: ${{ secrets.ACCESS_TOKEN || github.token }}
           script: |
-            const username = process.env.GITHUB_ACTOR;
+            const fs = require("fs");
+            const path = require("path");
 
-            // List ALL repos (needs PAT)
             const repos = await github.paginate(
               github.rest.repos.listForAuthenticatedUser,
-              { per_page: 100 }
+              { per_page: 100, affiliation: "owner" }
             );
 
             const langs = {};
-
             for (const repo of repos) {
+              if (repo.fork || repo.archived) continue;
+
               const data = await github.rest.repos.listLanguages({
                 owner: repo.owner.login,
                 repo: repo.name
@@ -43,16 +44,72 @@ jobs:
               }
             }
 
-            return JSON.stringify(langs);
+            const total = Object.values(langs).reduce((a, b) => a + b, 0) || 1;
+            const top = Object.entries(langs)
+              .sort((a, b) => b[1] - a[1])
+              .slice(0, 8)
+              .map(([name, bytes]) => ({
+                name,
+                bytes,
+                pct: (bytes / total) * 100
+              }));
 
-      - name: Save languages.json
-        run: |
-          echo '${{ steps.stats.outputs.result }}' > languages.json
+            const colors = {
+              JavaScript: "#f1e05a",
+              TypeScript: "#3178c6",
+              Go: "#00ADD8",
+              "C#": "#178600",
+              Python: "#3572A5",
+              "C++": "#f34b7d",
+              Java: "#b07219",
+              HTML: "#e34c26",
+              CSS: "#563d7c",
+              Shell: "#89e051"
+            };
+
+            const width = 800;
+            const padding = 24;
+            const barStartX = 210;
+            const barWidth = 540;
+            const barHeight = 14;
+            const gap = 10;
+            const headerH = 28;
+            const height = padding * 2 + headerH + top.length * (barHeight + gap);
+
+            let y = padding + headerH;
+            let rows = "";
+            for (const item of top) {
+              const w = Math.max(6, Math.round((item.pct / 100) * barWidth));
+              const color = colors[item.name] || "#6a737d";
+              const labelY = y + barHeight - 2;
+              rows += `
+              <text x="24" y="${labelY}" font-size="12" fill="#c9d1d9">${item.name}</text>
+              <text x="${barStartX + barWidth + 8}" y="${labelY}" font-size="12" fill="#c9d1d9">${item.pct.toFixed(1)}%</text>
+              <rect x="${barStartX}" y="${y}" width="${barWidth}" height="${barHeight}" rx="7" fill="#161b22" />
+              <rect x="${barStartX}" y="${y}" width="${w}" height="${barHeight}" rx="7" fill="${color}" />
+              `;
+              y += barHeight + gap;
+            }
+
+            const svg = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+              <rect width="100%" height="100%" rx="12" fill="#0d1117" />
+              <text x="24" y="36" font-size="16" font-weight="600" fill="#c9d1d9">Top Languages (all repos)</text>
+              ${rows}
+            </svg>
+            `.trim();
+
+            const outDir = path.join(process.cwd(), "assets");
+            fs.mkdirSync(outDir, { recursive: true });
+            fs.writeFileSync("languages.json", JSON.stringify(langs, null, 2));
+            fs.writeFileSync(path.join(outDir, "languages.svg"), svg);
+
+            return JSON.stringify(langs);
 
       - name: Commit update
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add languages.json || true
+          git add languages.json assets/languages.svg || true
           git commit -am "update languages" || true
           git push || true
