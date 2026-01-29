@@ -25,14 +25,23 @@ jobs:
             const fs = require("fs");
             const path = require("path");
 
+            const user = await github.rest.users.getAuthenticated();
+            const profile = user.data;
+
             const repos = await github.paginate(
               github.rest.repos.listForAuthenticatedUser,
               { per_page: 100, affiliation: "owner" }
             );
 
             const langs = {};
+            let stars = 0;
+            let forks = 0;
+            let repoCount = 0;
             for (const repo of repos) {
               if (repo.fork || repo.archived) continue;
+              repoCount += 1;
+              stars += repo.stargazers_count || 0;
+              forks += repo.forks_count || 0;
 
               const data = await github.rest.repos.listLanguages({
                 owner: repo.owner.login,
@@ -99,10 +108,44 @@ jobs:
             </svg>
             `.trim();
 
+            const statsWidth = 800;
+            const statsHeight = 160;
+            const stats = [
+              ["Public Repos", repoCount],
+              ["Stars", stars],
+              ["Forks", forks],
+              ["Followers", profile.followers || 0]
+            ];
+            const statBlockW = 180;
+            const statBlockH = 64;
+            const statGap = 20;
+            const statStartX = 24;
+            const statStartY = 64;
+
+            let statRows = "";
+            stats.forEach((s, i) => {
+              const x = statStartX + i * (statBlockW + statGap);
+              const y = statStartY;
+              statRows += `
+              <rect x="${x}" y="${y}" width="${statBlockW}" height="${statBlockH}" rx="10" fill="#161b22" />
+              <text x="${x + 14}" y="${y + 24}" font-size="12" fill="#8b949e">${s[0]}</text>
+              <text x="${x + 14}" y="${y + 50}" font-size="20" font-weight="600" fill="#c9d1d9">${s[1]}</text>
+              `;
+            });
+
+            const statsSvg = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="${statsWidth}" height="${statsHeight}" viewBox="0 0 ${statsWidth} ${statsHeight}">
+              <rect width="100%" height="100%" rx="12" fill="#0d1117" />
+              <text x="24" y="36" font-size="16" font-weight="600" fill="#c9d1d9">Profile Stats</text>
+              ${statRows}
+            </svg>
+            `.trim();
+
             const outDir = path.join(process.cwd(), "assets");
             fs.mkdirSync(outDir, { recursive: true });
             fs.writeFileSync("languages.json", JSON.stringify(langs, null, 2));
             fs.writeFileSync(path.join(outDir, "languages.svg"), svg);
+            fs.writeFileSync(path.join(outDir, "stats.svg"), statsSvg);
 
             return JSON.stringify(langs);
 
@@ -110,6 +153,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add languages.json assets/languages.svg || true
+          git add languages.json assets/languages.svg assets/stats.svg || true
           git commit -am "update languages" || true
           git push || true
