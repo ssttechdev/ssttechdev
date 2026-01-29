@@ -4,11 +4,11 @@
   
   <rect x="24" y="64" width="180" height="64" rx="10" fill="#161b22" />
   <text x="38" y="88" font-size="12" fill="#8b949e">Public Repos</text>
-  <text x="38" y="114" font-size="20" font-weight="600" fill="#c9d1d9">45</text>
+  <text x="38" y="114" font-size="20" font-weight="600" fill="#c9d1d9">194</text>
   
   <rect x="224" y="64" width="180" height="64" rx="10" fill="#161b22" />
   <text x="238" y="88" font-size="12" fill="#8b949e">Stars</text>
-  <text x="238" y="114" font-size="20" font-weight="600" fill="#c9d1d9">0</text>
+  <text x="238" y="114" font-size="20" font-weight="600" fill="#c9d1d9">2</text>
   
   <rect x="424" y="64" width="180" height="64" rx="10" fill="#161b22" />
   <text x="438" y="88" font-size="12" fill="#8b949e">Forks</text>
