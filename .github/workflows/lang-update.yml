@@ -33,7 +33,7 @@ jobs:
 
             const repos = await github.paginate(
               github.rest.repos.listForAuthenticatedUser,
-              { per_page: 100, affiliation: "owner" }
+              { per_page: 100, affiliation: "owner,organization_member", visibility: "all" }
             );
 
             const langs = {};
