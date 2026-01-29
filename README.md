@@ -73,7 +73,7 @@ A short list of real things I ship:
 
 ## 📊 Stats
 <p align="center">
-  <img width="46%" src="https://github-readme-stats.vercel.app/api?username=ssttechdev&show_icons=true&theme=tokyonight" />
+  <img width="46%" src="https://github-readme-stats.vercel.app/api?username=ssttechdev&show_icons=true&theme=tokyonight&cache_seconds=7200" />
   <img width="46%" src="https://github-readme-streak-stats.herokuapp.com/?user=ssttechdev&theme=tokyonight" />
 </p>
 
@@ -83,7 +83,7 @@ A short list of real things I ship:
 (Automatically updated, includes private repos.)
 
 <p align="center">
-  <img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ssttechdev&layout=compact&theme=tokyonight&hide=html" />
+  <img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ssttechdev&layout=compact&theme=tokyonight&hide=html&cache_seconds=7200" />
 </p>
 
 ---
