@@ -3,6 +3,14 @@
 
 ---
 
+## 📊 Stats
+<p align="center">
+  <img width="49%" src="assets/stats.svg" />
+  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=ssttechdev&theme=tokyonight" />
+</p>
+
+---
+
 ## 🧩 About
 I work across multiple layers of the stack — from backend services and system automation to embedded firmware and custom Linux builds.  
 Mostly focused on building things that run fast, scale well, and don’t fall apart at 3 AM.
@@ -58,14 +66,6 @@ A short list of real things I ship:
 - scoring/analytics engines  
 - custom Linux OS (auto-installer, kiosk, locked UI)  
 - messaging/worker pipelines  
-
----
-
-## 📊 Stats
-<p align="center">
-  <img width="49%" src="assets/stats.svg" />
-  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=ssttechdev&theme=tokyonight" />
-</p>
 
 ---
 
