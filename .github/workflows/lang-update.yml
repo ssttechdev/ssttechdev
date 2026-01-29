@@ -2,11 +2,12 @@ name: Update Language Stats
 
 on:
   schedule:
-    - cron: "0 0 * * 1"     # update every Monday
+    - cron: "0 0 * * 1"     # every Monday
   workflow_dispatch:
 
 permissions:
   contents: read
+  metadata: read
 
 jobs:
   stats:
@@ -16,16 +17,19 @@ jobs:
         id: stats
         with:
           script: |
+            const username = process.env.GITHUB_ACTOR;
+
+            // fetch all repos including private
             const repos = await github.paginate(
-              github.rest.repos.listForAuthenticatedUser,
-              { per_page: 100 }
+              github.rest.repos.listForUser,
+              { username, per_page: 100 }
             );
 
             const langs = {};
 
             for (const repo of repos) {
               const langData = await github.rest.repos.listLanguages({
-                owner: repo.owner.login,
+                owner: username,
                 repo: repo.name
               });
 
