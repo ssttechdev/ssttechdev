@@ -13,7 +13,7 @@
   <rect x="210" y="76" width="106" height="14" rx="7" fill="#f1e05a" />
   
   <text x="24" y="112" font-size="12" fill="#c9d1d9">TypeScript</text>
-  <text x="758" y="112" font-size="12" fill="#c9d1d9">15.0%</text>
+  <text x="758" y="112" font-size="12" fill="#c9d1d9">14.9%</text>
   <rect x="210" y="100" width="540" height="14" rx="7" fill="#161b22" />
   <rect x="210" y="100" width="81" height="14" rx="7" fill="#3178c6" />
   
@@ -23,14 +23,14 @@
   <rect x="210" y="124" width="45" height="14" rx="7" fill="#563d7c" />
   
   <text x="24" y="160" font-size="12" fill="#c9d1d9">C#</text>
-  <text x="758" y="160" font-size="12" fill="#c9d1d9">7.8%</text>
+  <text x="758" y="160" font-size="12" fill="#c9d1d9">7.9%</text>
   <rect x="210" y="148" width="540" height="14" rx="7" fill="#161b22" />
   <rect x="210" y="148" width="42" height="14" rx="7" fill="#178600" />
   
   <text x="24" y="184" font-size="12" fill="#c9d1d9">HTML</text>
   <text x="758" y="184" font-size="12" fill="#c9d1d9">6.0%</text>
   <rect x="210" y="172" width="540" height="14" rx="7" fill="#161b22" />
-  <rect x="210" y="172" width="33" height="14" rx="7" fill="#e34c26" />
+  <rect x="210" y="172" width="32" height="14" rx="7" fill="#e34c26" />
   
   <text x="24" y="208" font-size="12" fill="#c9d1d9">SCSS</text>
   <text x="758" y="208" font-size="12" fill="#c9d1d9">2.7%</text>
