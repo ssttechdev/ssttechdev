@@ -8,12 +8,12 @@
   <rect x="210" y="52" width="184" height="14" rx="7" fill="#6a737d" />
   
   <text x="24" y="88" font-size="12" fill="#c9d1d9">JavaScript</text>
-  <text x="758" y="88" font-size="12" fill="#c9d1d9">19.5%</text>
+  <text x="758" y="88" font-size="12" fill="#c9d1d9">19.4%</text>
   <rect x="210" y="76" width="540" height="14" rx="7" fill="#161b22" />
   <rect x="210" y="76" width="105" height="14" rx="7" fill="#f1e05a" />
   
   <text x="24" y="112" font-size="12" fill="#c9d1d9">TypeScript</text>
-  <text x="758" y="112" font-size="12" fill="#c9d1d9">15.5%</text>
+  <text x="758" y="112" font-size="12" fill="#c9d1d9">15.3%</text>
   <rect x="210" y="100" width="540" height="14" rx="7" fill="#161b22" />
   <rect x="210" y="100" width="83" height="14" rx="7" fill="#3178c6" />
   
@@ -23,7 +23,7 @@
   <rect x="210" y="124" width="44" height="14" rx="7" fill="#563d7c" />
   
   <text x="24" y="160" font-size="12" fill="#c9d1d9">C#</text>
-  <text x="758" y="160" font-size="12" fill="#c9d1d9">7.8%</text>
+  <text x="758" y="160" font-size="12" fill="#c9d1d9">7.9%</text>
   <rect x="210" y="148" width="540" height="14" rx="7" fill="#161b22" />
   <rect x="210" y="148" width="42" height="14" rx="7" fill="#178600" />
   
@@ -38,7 +38,7 @@
   <rect x="210" y="196" width="14" height="14" rx="7" fill="#6a737d" />
   
   <text x="24" y="232" font-size="12" fill="#c9d1d9">Kotlin</text>
-  <text x="758" y="232" font-size="12" fill="#c9d1d9">1.4%</text>
+  <text x="758" y="232" font-size="12" fill="#c9d1d9">1.5%</text>
   <rect x="210" y="220" width="540" height="14" rx="7" fill="#161b22" />
   <rect x="210" y="220" width="8" height="14" rx="7" fill="#6a737d" />
   
